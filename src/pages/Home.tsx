@@ -1,11 +1,12 @@
 import React from 'react';
-import { Container, Typography, Box, Button, Grid, Paper } from '@mui/material';
+import { Container, Typography, Box, Button, Grid, Paper, useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import AccountConnect from '../components/AccountConnect';
 import "@coinbase/onchainkit/styles.css";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const handleAdminLogin = () => {
     // Redirect to admin login page
@@ -42,18 +43,25 @@ const Home: React.FC = () => {
 
         <Grid container spacing={4} mt={4} justifyContent='center'>
           <Grid item xs={12} sm={6} md={4}>
-            <Paper elevation={3} sx={{ p: 4, height: '100%' }}>
+            <Paper sx={{ p: 4, height: '100%', backgroundColor: theme.palette.primary.main }}>
               <Typography variant="h5" gutterBottom>
                 Looking to Donate?
               </Typography>
-              <Box className="inline-flex h-10 items-center justify-center gap-2 rounded-3xl bg-white px-4 py-2">
-                <AccountConnect />
-              </Box>             
+              <AccountConnect />
               <Button
-                variant="outlined"
-                color="primary"
+                variant="contained"
                 onClick={handleViewCampaigns}
-                sx={{ mt: 2 }}
+                sx={{
+                  mt: 2,
+                  backgroundColor: 'white',
+                  borderRadius: '30px',
+                  padding: '10px 20px',
+                  '&:hover': {
+                    backgroundColor: 'white',
+                    border: '1px solid blue',
+                    boxShadow: 'none'
+                  },
+                }}
               >
                 View Campaigns
               </Button>
@@ -61,15 +69,24 @@ const Home: React.FC = () => {
           </Grid>
 
           <Grid item xs={12} sm={6} md={4}>
-            <Paper elevation={3} sx={{ p: 4, height: '100%' }}>
+            <Paper sx={{ p: 4, height: '100%', backgroundColor: theme.palette.primary.main }}>
               <Typography variant="h5" gutterBottom>
                 Want to Create a Campaign?
               </Typography>
               <Button
-                variant="outlined"
-                color="primary"
+                variant="contained"
                 onClick={handleCreateCampaign}
-                sx={{ mt: 2 }}
+                sx={{
+                  mt: 2,
+                  backgroundColor: 'white',
+                  borderRadius: '30px',
+                  padding: '10px 20px',
+                  '&:hover': {
+                    backgroundColor: 'white',
+                    border: '1px solid blue',
+                    boxShadow: 'none'
+                  },
+                }}
               >
                 Create Campaign
               </Button>
@@ -77,20 +94,28 @@ const Home: React.FC = () => {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 4, height: '100%' }}>
+            <Paper sx={{ p: 4, height: '100%', backgroundColor: theme.palette.primary.main }}>
               <Typography variant="h5" gutterBottom>
                 Admin Access
               </Typography>
               <Button
-                variant="outlined"
-                color="secondary"
+                variant="contained"
                 onClick={handleAdminLogin}
-                sx={{ mt: 2 }}
+                sx={{
+                  backgroundColor: 'white',
+                  mt: 2,
+                  borderRadius: '30px',
+                  padding: '10px 20px',
+                  '&:hover': {
+                    backgroundColor: 'white',
+                    border: '1px solid blue',
+                    boxShadow: 'none'
+                  },
+                }}
               >
                 Admin Login
               </Button>
             </Paper>
-
           </Grid>
         </Grid>
       </Box>

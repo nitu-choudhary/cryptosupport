@@ -7,6 +7,7 @@ import Donate from './pages/Donate';
 import Dashboard from './pages/Dashboard';
 import "@coinbase/onchainkit/styles.css";
 import OnchainProviders from './components/OnchainProviders';
+import CampaignDetails from './pages/CampaignDetails';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/campaigns" element={<Campaigns />} />
+              <Route path="/campaigns/:id" element={<CampaignDetails />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/dashboard" element={<Dashboard />} />
             </Routes>

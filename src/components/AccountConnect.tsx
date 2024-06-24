@@ -8,12 +8,12 @@ const AccountConnect: React.FC = () => {
   const { disconnect } = useDisconnect();
   
   return (
-    <div className="flex items-center">
+    <div>
       { status === 'disconnected' ? (
            <ConnectAccount/>
       ) : ( 
         address && (
-          <div className="inline-flex items-center bg-white justify-center">
+          <div>
               <button
                 type="button"
                 onClick={() => disconnect()}
