@@ -1,3 +1,16 @@
+# CryptoSupport
+
+CryptoSupport is an on-chain disaster relief fund platform. It allows users to create and manage fundraising campaigns, donate using cryptocurrencies, and track the distribution of funds. This application leverages the Coinbase Wallet for secure and seamless transactions.
+
+## Features
+
+- Campaign Management: Users can view a list of active fundraising campaigns.
+- Wallet Integration: Seamless integration with Coinbase Wallet for secure transactions.
+- Donation Functionality: Users can donate to campaigns if their wallet is connected.
+- Detailed Campaign Information: Users can view detailed information about each campaign before donating.
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
